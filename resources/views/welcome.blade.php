@@ -2,7 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
-    <title>{{ appname() }}</title>
+    <title>LOL</title>
 </head>
 <body>
     
