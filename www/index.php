@@ -5,9 +5,8 @@
 * PicWorld StarUp               |
 * ==============================|
 */
-require 'app/inc/config.php';
-
-require 'app/app.php';
+require 'app/autoload.php'; // Add lib
 
 $app = new App(); // Core of application
+
 $app->Init(); // Init of engine
