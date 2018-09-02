@@ -35,7 +35,7 @@ class PcWEng
 		if( $this->app || is_array($this->app) ){
 			require BASE_DIR.'apps/'.$this->app['0'].'/controller.php';
 			$cn = $this->app['0'].'Controller';
-			$appc = new $cn();
+			$this->appc = new $cn();
 			$this->appc->{$this->app['1']['met']}($this->app['1']['args']);
 		}
 	}
