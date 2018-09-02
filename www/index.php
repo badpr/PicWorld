@@ -1,12 +1,13 @@
 <?php
 /*
-* ==============================|
-* BadProggers Present           |
-* PicWorld StarUp               |
-* ==============================|
+* |   |
+* |---| ARD #CODE
+* |   |
+* Bad Proggers, 2018. GNU License 2018-2019.
 */
-require 'app/autoload.php'; // Add lib
+define('BASE_DIR', $_SERVER['DOCUMENT_ROOT'].'/');
+define('FR_DIR', $_SERVER['DOCUMENT_ROOT'].'/framework/');
 
-$app = new App(); // Core of application
+require(FR_DIR.'core/load.php'); // Load lib
 
-$app->Init(); // Init of engine
+$app = new PcWEng( require('./config.php') ); // Aplication

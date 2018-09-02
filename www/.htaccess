@@ -1,6 +1,7 @@
-RewriteEngine On  
-  
-RewriteCond %{SCRIPT_FILENAME} !-d  
-RewriteCond %{SCRIPT_FILENAME} !-f  
+RewriteEngine On
 
-RewriteRule ^(.*)$ ./index.php?route=$1
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php
+
+AddDefaultCharset utf-8
