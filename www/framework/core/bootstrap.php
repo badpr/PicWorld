@@ -21,7 +21,7 @@ class PcWEng
 			$iurl = require(BASE_DIR . 'apps/' . $iapp . '/web.php');
 			foreach ($iurl as $pat => $met) {
 				$args = array();
-				if( preg_match($pat, $this->uri) ){
+				if( preg_match($pat, $this->uri, $args) ){
 					$this->app = array($iapp, array('pat' => $pat, 'met' => $met, 'args' => $args));
 					break(2);
 				}		

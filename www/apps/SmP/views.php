@@ -4,7 +4,7 @@
  */
 class SmPView extends PcWViews
 {
-	public MainPage($args){
+	public function MainPage($args){
 
 	}	
 }
