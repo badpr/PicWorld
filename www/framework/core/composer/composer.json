@@ -1,0 +1,6 @@
+{
+    "require": {
+        "gabordemooij/redbean": "^5.1",
+        "twig/twig": "^2.5"
+    }
+}

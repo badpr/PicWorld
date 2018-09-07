@@ -2,9 +2,9 @@
 /**
  * Controller of PicWorld
  */
-class SmPController extends PcWControllers
+class SmPController extends Controller
 {
 	public function MainPage($args){
-		echo 'HelloMe';
+		view('main', array('name' => 'Alex'));
 	}
 }

@@ -2,9 +2,7 @@
 /**
  * The controlle
  */
-class PcWControllers
+class Controller extends System
 {
-	public function pars(){
-		
-	}
+
 }
