@@ -20,10 +20,11 @@ class PcWEng
 	public function appStarting(){
 		foreach ($this->config['apps'] as $iapp) {
 			$iurl = require(BASE_DIR . 'apps/' . $iapp . '/web.php');
-			foreach ($iurl as $pat => $met) {
+			foreach ($iurl as $url) {
+                $url['path'] = convertUri($url['path']);
 				$args = array();
-				if( preg_match($pat, $this->uri, $args) ){
-					$this->app = array($iapp, array('pat' => $pat, 'met' => $met, 'args' => $args));
+				if( preg_match($url['path'], $this->uri, $args) ){
+					$this->app = array($iapp, array('pat' => $url['path'], 'met' => $url['view'], 'alias' => $url['alias'], 'args' => $args));
 					break(2);
 				}		
 			}
@@ -43,7 +44,7 @@ class PcWEng
 		        // Method render
                 require BASE_DIR . 'apps/' . $this->app['0'] . '/controller.php';
                 $cn = $this->app['0'] . 'Controller';
-                $this->appc = new $cn();
+                $this->appc = new $cn($this->app['1']['args']);
                 $this->appc->{$this->app['1']['met']}($this->app['1']['args']);
             }
 		}

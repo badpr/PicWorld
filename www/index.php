@@ -10,6 +10,8 @@ define('FR_DIR', $_SERVER['DOCUMENT_ROOT'].'/framework/');
 define('TWIG_CACHE', FR_DIR . 'cache/');
 define('APPS_DIR', BASE_DIR . 'apps/');
 define('TMP_DIR', BASE_DIR . 'templates/');
+define('TWIG_EXT', FR_DIR . 'modules/twig_extensions/');
+define('CONF_PATH', BASE_DIR. 'config.php');
 
 require(FR_DIR . 'autoload.php'); // Load lib
 

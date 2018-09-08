@@ -1,8 +1,5 @@
 <?php
 return array(
-    '/news' => url()
+    url('/news', 'news', 'amain'),
+    url('/news/read/krosovki/{id}', 'only', 'aonly')
 );
-/*return array(
-    '#^/news*$#i' => 'news',
-    '#^/news/([0-9]+)*$#i' => 'only'
-);*/

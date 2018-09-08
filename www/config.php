@@ -2,9 +2,9 @@
 
 return array(
 'apps' => array(
-	'smp',
     'news'
 ),
+'version' => '0.0.1',
 'twig' => array(
     'cache_enable' => true
 ),
