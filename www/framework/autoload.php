@@ -8,7 +8,7 @@ require(FR_DIR . 'core/classes/system.php'); // System Inc
 require(FR_DIR . 'core/classes/controller.php'); // Controller Inc
 
 // Connect modules
-$modules = glob( FR_DIR.'core/modules/*.module.php' );
+$modules = glob( FR_DIR.'modules/*.module.php' );
 foreach ($modules as $module) {
     require $module;
 }

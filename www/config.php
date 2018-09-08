@@ -2,7 +2,8 @@
 
 return array(
 'apps' => array(
-	'SmP'
+	'smp',
+    'news'
 ),
 'twig' => array(
     'cache_enable' => true
