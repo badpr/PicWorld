@@ -1,4 +1,10 @@
 <?php
-return array(
-    'count' => 5804
-);
+if(ACTIVE_APP == App::get()) {
+    return array(
+        'count' => 5804
+    );
+}else{
+    return array(
+        'count' => 'Только в приложений News'
+    );
+}

@@ -29,7 +29,7 @@ class Urls_Twig_Extension extends \Twig_Extension {
         // Get iurl
         $iurl = array();
         if( isset($app_name) ){
-            $iurl = require APPS_DIR. '/' . strtolower($app_name) . '/web.php';
+            $iurl = \route::get_urls_web(APPS_DIR. '/' . strtolower($app_name) . '/web.php');
         }else{
             $conf = require BASE_DIR . 'config.php';
             foreach ($conf['apps'] as $app){

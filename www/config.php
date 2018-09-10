@@ -2,11 +2,14 @@
 
 return array(
 'apps' => array(
-    'news'
+    'news',
+    'articles'
 ),
-'version' => '0.0.1',
-'twig' => array(
-    'cache_enable' => true
-),
-'debug' => true
+'version' => '0.1.2 "Think of light"',
+'db' => array(
+    'host_db' => 'localhost', // Host of DB
+    'user_db' => 'root', // User of DB
+    'pass_db' => '', // Pass of DB
+    'name_db' => 'pcw' // Name of DB
+)
 );

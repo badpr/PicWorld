@@ -2,7 +2,7 @@
 /**
  * Engine
  */
-class PcWEng
+class PcWEng extends System
 {
 	public 
 		$config, // Config
@@ -19,9 +19,10 @@ class PcWEng
 	}
 	public function appStarting(){
 		foreach ($this->config['apps'] as $iapp) {
-			$iurl = require(BASE_DIR . 'apps/' . $iapp . '/web.php');
+			$iurl = route::get_urls_web(BASE_DIR . 'apps/' . $iapp . '/web.php');
+			//$this->dump($iurl);
 			foreach ($iurl as $url) {
-                $url['path'] = convertUri($url['path']);
+                $url['path'] = route::convert_url($url['path']);
 				$args = array();
 				if( preg_match($url['path'], $this->uri, $args) ){
 					$this->app = array($iapp, array('pat' => $url['path'], 'met' => $url['view'], 'alias' => $url['alias'], 'args' => $args));
@@ -39,12 +40,12 @@ class PcWEng
 	public function loadPages(){
 		if( $this->app || is_array($this->app) ){
 		    if( is_array($this->app['1']['met']) ){
-		        view($this->app['1']['met']['view'], $this->app['1']['met']['vars']);
+		        view::render($this->app['1']['met']['view'], $this->app['1']['met']['vars']);
             }else {
 		        // Method render
                 require BASE_DIR . 'apps/' . $this->app['0'] . '/controller.php';
                 $cn = $this->app['0'] . 'Controller';
-                $this->appc = new $cn($this->app['1']['args']);
+                $this->appc = new $cn($this->app['1']['met']);
                 $this->appc->{$this->app['1']['met']}($this->app['1']['args']);
             }
 		}

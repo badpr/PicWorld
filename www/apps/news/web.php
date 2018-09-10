@@ -1,5 +1,3 @@
 <?php
-return array(
-    url('/news', 'news', 'amain'),
-    url('/news/read/krosovki/{id}', 'only', 'aonly')
-);
+route::get('/news', view::url_view('main'), 'amain');
+route::get('/news/read/krosovki/{id}', 'only', 'aonly');
