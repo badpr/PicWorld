@@ -1,5 +1,5 @@
 <?php
-if(ACTIVE_APP == App::get()) {
+if(ACTIVE_APP == app::get()) {
     return array(
         'count' => 5804
     );
